@@ -104,7 +104,7 @@ const DefaultPage = () => {
             {data?.phonetic}
           </p>
         </div>
-        <PlayIcon className="w-16 md:w-22 lg:scale-120"  onClick={playAudio}/>
+        <PlayIcon className="w-16 md:w-22 lg:scale-120 hover:cursor-pointer"  onClick={playAudio}/>
       </div>
 
       {data?.meanings?.map((def, index) => (

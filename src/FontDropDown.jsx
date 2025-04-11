@@ -62,17 +62,15 @@ const FontDropDown = ({ font, onFontChange }) => {
       <button
         className="flex items-center gap-x-2 dark:text-primary-100 md:text-lg lg:text-xl"
         onClick={toggleDropdown}
-        onMouseEnter={toggleDropdown}
         ref={iconRef}
       >
         {fontUsed}
-        <ArrowDown className="aspect-square stroke-icon-primary md:scale-120 lg:scale-150" />
+        <ArrowDown className={`aspect-square stroke-icon-primary md:scale-120 lg:scale-150 ${isOpen ? 'rotate-180' : ''}`}/>
       </button>
       {isOpen && (
         <div
           className="flex absolute flex-col rounded-lg shadow-lg p-4 w-36 right-4 mt-2 space-y-1.5 z-50 bg-primary-100 dark:bg-primary-500 text-primary-800 dark:text-primary-100 lg:gap-y-2"
           ref={elementRef}
-          onMouseLeave={toggleDropdown}
         >
           <button
             className="text-left hover:text-secondary-100 font-bold md:text-lg lg:text-xl"

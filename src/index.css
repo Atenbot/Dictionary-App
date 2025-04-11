@@ -89,16 +89,22 @@ body {
   font-family: 'Lora', 'serif'
 }
 
-/* .flex-item {
-  min-width: 0; 
-  white-space: nowrap;
-} */
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+.loader {
+  width: 64px;
+  height: 64px;
+  border: 5px dotted #a445ed;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
 }
 
-/* Hide scrollbar for Firefox */
-.no-scrollbar {
-  scrollbar-width: none;
-}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

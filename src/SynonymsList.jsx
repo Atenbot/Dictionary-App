@@ -13,8 +13,9 @@ const SynonymsList = ({ synonyms, getDefinition }) => {
 
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width > 640) setContainerWidth(430);
-      else if(width >= 1024) setContainerWidth(900);
+      if (width > 1200) setContainerWidth(600)
+      else if (width >= 1024) setContainerWidth(300) 
+      else if(width > 640) setContainerWidth(430)
       else setContainerWidth(250);
     }
 
