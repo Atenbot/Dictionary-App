@@ -59,17 +59,19 @@ const Explorer = ({ font }) => {
   };
 
   const getDefinition = async (word) => {
-    setWordError(false);
-    setEmptyError(false);
 
     const trimmedWord = word.trim();
     if (trimmedWord.length == 0) {
+      setIsLoading(false)
       setEmptyError(true);
       setTimeout(() => {
         setEmptyError(false);
       }, 1000);
       return;
     } else {
+
+      setWordError(false);
+      setEmptyError(false);
       setIsLoading(true);
       handleSetOnce();
       setWord(trimmedWord);
@@ -95,12 +97,12 @@ const Explorer = ({ font }) => {
         <div className="relative flex items-center">
           <input
             type="text"
-            placeholder="Type any word"
+            placeholder="Search a word"
             value={word}
             onChange={(e) => setWord(e.target.value)}
             onKeyDown={handleKeydown}
-            className={`rounded-2xl bg-primary-300 dark:bg-primary-600 dark:text-primary-300 font-bold w-full px-4 py-4 md:py-4.5 md:text-lg lg:py-5 border-1 border-primary-300 dark:border-primary-600 focus:border-secondary-100 outline-none ${
-              emptyError ? "outline-solid outline-1 outline-secondary-200" : ""
+            className={`rounded-2xl bg-primary-300 dark:bg-primary-600 dark:text-primary-300 font-bold w-full px-4 py-4 md:py-4.5 md:text-lg lg:py-5 border-1 border-primary-300 dark:border-primary-600  outline-none ${
+              emptyError ? "border-secondary-200" : "focus:border-secondary-100"
             }`}
           />
           <button className="absolute right-0 md:scale-120 hover:cursor-pointer h-[60px] w-[60px] flex items-center justify-center">
